@@ -80,7 +80,7 @@ const timelineData = [
 
 const TimelineItem = ({ data, index }) => {
   const itemRef = useRef(null);
-  const isLeft = index % 2 === 0;
+  const isRight = index % 2 !== 0;
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -90,45 +90,43 @@ const TimelineItem = ({ data, index }) => {
             anime({
               targets: itemRef.current,
               opacity: [0, 1],
-              translateY: [100, 0],
-              easing: 'easeOutElastic(1, .6)',
-              duration: 1500,
-              delay: 100
+              translateY: [50, 0],
+              easing: 'easeOutCubic',
+              duration: 1000,
+              delay: 200
             });
             observer.unobserve(entry.target);
           }
         });
       },
-      { threshold: 0.2 }
+      { threshold: 0.1 }
     );
 
     if (itemRef.current) {
       observer.observe(itemRef.current);
     }
-
-    return () => {
-      if (itemRef.current) {
-        observer.unobserve(itemRef.current);
-      }
-    };
   }, []);
 
   return (
-    <div 
-      ref={itemRef} 
-      className={`timeline-card ${isLeft ? 'left' : 'right'}`}
-      style={{ opacity: 0 }} // Initial state hidden for animation
-    >
-      <h3>{data.role}</h3>
-      <small>{data.period}</small>
-      {data.items && (
-        <ul>
-          {data.items.map((item, i) => (
-            <li key={i}>{item}</li>
-          ))}
-        </ul>
-      )}
-      {data.desc && <p>{data.desc}</p>}
+    <div className={`timeline-row ${isRight ? 'right' : ''}`}>
+      <div className="timeline-spacer"></div>
+      <div className="timeline-dot"></div>
+      <div 
+        ref={itemRef} 
+        className="timeline-content"
+        style={{ opacity: 0 }}
+      >
+        <h3>{data.role}</h3>
+        <small>{data.period}</small>
+        {data.items && (
+          <ul>
+            {data.items.map((item, i) => (
+              <li key={i}>{item}</li>
+            ))}
+          </ul>
+        )}
+        {data.desc && <p style={{ fontSize: '17px', color: 'var(--text-secondary)' }}>{data.desc}</p>}
+      </div>
     </div>
   );
 };
@@ -144,7 +142,7 @@ const Timeline = () => {
             anime({
               targets: titleRef.current,
               opacity: [0, 1],
-              translateX: [-50, 0],
+              translateY: [-20, 0],
               easing: 'easeOutExpo',
               duration: 1000
             });
@@ -162,8 +160,8 @@ const Timeline = () => {
 
   return (
     <section>
-      <h2 className="title" ref={titleRef} style={{ opacity: 0 }}>Career Timeline</h2>
-      <div className="timeline">
+      <h2 className="title" ref={titleRef} style={{ opacity: 0 }}>Career Journey</h2>
+      <div className="timeline-container">
         {timelineData.map((data, index) => (
           <TimelineItem key={index} data={data} index={index} />
         ))}
