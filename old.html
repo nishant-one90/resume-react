@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Nishant Anand – Resume</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:Inter,sans-serif}
+body{background:#fff;color:#111}
+
+/* HERO */
+.hero{
+height:100vh;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+text-align:center;
+}
+.hero h1{font-size:64px;font-weight:700}
+.hero p{font-size:22px;color:#555;margin-top:15px}
+.links{margin-top:25px}
+.links a{margin:0 12px;color:#0066cc;text-decoration:none;font-weight:500}
+
+/* SECTIONS */
+section{padding:120px 8%}
+.title{font-size:48px;margin-bottom:40px}
+
+/* TIMELINE */
+.timeline{
+position:relative;
+max-width:900px;
+margin:auto;
+}
+.timeline::after{
+content:'';
+position:absolute;
+width:2px;
+background:#ddd;
+top:0;
+bottom:0;
+left:50%;
+}
+
+.card{
+padding:25px;
+background:#f5f5f7;
+border-radius:12px;
+width:45%;
+margin:30px 0;
+position:relative;
+opacity:0;
+transform:translateY(60px);
+transition:.6s;
+}
+
+.left{left:0}
+.right{left:55%}
+
+.card::after{
+content:'';
+position:absolute;
+top:20px;
+width:15px;height:15px;
+background:#000;
+border-radius:50%;
+}
+
+.left::after{right:-33px}
+.right::after{left:-33px}
+
+.show{
+opacity:1;
+transform:translateY(0);
+}
+
+/* SKILLS */
+.grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:25px;
+}
+.box{
+background:#f5f5f7;
+padding:25px;
+border-radius:14px;
+}
+
+/* FOOTER */
+footer{
+padding:60px 8%;
+text-align:center;
+color:#666;
+}
+
+@media(max-width:900px){
+.timeline::after{left:20px}
+.card{width:100%;left:0}
+.card::after{left:-28px}
+}
+</style>
+</head>
+
+<body>
+
+<!-- HERO -->
+<div class="hero">
+<h1>Nishant Anand</h1>
+<p>Business Development Manager</p>
+<p>Gurugram, Haryana</p>
+
+<div class="links">
+<a href="mailto:y2knishant@gmail.com">Email</a>
+<a href="https://linkedin.com/in/y2knishant" target="_blank">LinkedIn</a>
+</div>
+</div>
+
+<!-- ABOUT -->
+<section>
+<h2 class="title">About</h2>
+<p style="max-width:800px;font-size:20px;line-height:1.6">
+With a proven track record in business development and revenue growth, I specialize in understanding client needs and devising custom strategies to drive revenue and enhance user satisfaction. I collaborate with cross-functional teams to create impactful marketing campaigns and consistently deliver strong revenue results.
+</p>
+</section>
+
+<!-- TIMELINE -->
+<section>
+<h2 class="title">Career Timeline</h2>
+
+<div class="timeline">
+
+<div class="card left">
+<h3>Eloelo – Senior Manager</h3>
+<small>Apr 2024 – Present | Bengaluru</small>
+<ul>
+<li>Driving MoM & QoQ revenue via virtual gifting</li>
+<li>Managing top agencies contributing 80% revenue</li>
+<li>Optimized commission & creator earning policies</li>
+<li>Improved viewer-to-streamer ratios</li>
+</ul>
+</div>
+
+<div class="card right">
+<h3>Meta – Product Content Operations</h3>
+<small>Aug 2023 – Feb 2024 | Bengaluru</small>
+<ul>
+<li>Optimized Instagram Reels content</li>
+<li>Policy & privacy decision maker</li>
+<li>Pilot project on Threads feed</li>
+<li>Tools: Salesforce, Freshdesk CMS</li>
+</ul>
+</div>
+
+<div class="card left">
+<h3>Career Break</h3>
+<small>Mar 2023 – Jul 2023</small>
+<p>Layoff / Position eliminated</p>
+</div>
+
+<div class="card right">
+<h3>ShareChat – Associate Manager</h3>
+<small>May 2021 – Feb 2023 | Mumbai</small>
+<ul>
+<li>45% interaction growth via new live model</li>
+<li>Managed 60+ agencies</li>
+<li>Revenue scaled 200% (₹2Cr GMV/month)</li>
+<li>Led team of 6 professionals</li>
+</ul>
+</div>
+
+<div class="card left">
+<h3>MX Player – Manager Live Ops</h3>
+<small>May 2021 – Mar 2022</small>
+<ul>
+<li>DAU performance analysis</li>
+<li>Product feedback & execution</li>
+</ul>
+</div>
+
+<div class="card right">
+<h3>LVE Innovations – BDM</h3>
+<small>Sep 2020 – May 2021</small>
+<ul>
+<li>Live audio app operations</li>
+<li>Revenue & agency management</li>
+</ul>
+</div>
+
+<div class="card left">
+<h3>Douyu TV – India BDM</h3>
+<small>Nov 2018 – May 2020</small>
+<ul>
+<li>Live streaming & gaming ecosystem</li>
+<li>Business & operations leadership</li>
+</ul>
+</div>
+
+<div class="card right">
+<h3>ICONS – Business Executive</h3>
+<small>May 2016 – Aug 2018</small>
+<ul>
+<li>Media sales & client servicing</li>
+</ul>
+</div>
+
+<div class="card left">
+<h3>OYO Rooms – Demand Marketing</h3>
+<small>Mar 2015 – Apr 2016</small>
+</div>
+
+<div class="card right">
+<h3>IBM – IT Practitioner</h3>
+<small>Jun 2011 – Jul 2013</small>
+</div>
+
+</div>
+</section>
+
+<!-- SKILLS -->
+<section>
+<h2 class="title">Expertise</h2>
+
+<div class="grid">
+<div class="box">Revenue Growth</div>
+<div class="box">Agency Management</div>
+<div class="box">Creator Economy</div>
+<div class="box">Product Operations</div>
+<div class="box">Market Strategy</div>
+<div class="box">Data Analysis</div>
+</div>
+</section>
+
+<!-- EDUCATION -->
+<section>
+<h2 class="title">Education</h2>
+
+<div class="grid">
+<div class="box">
+<h3>IILM University</h3>
+<p>Marketing & Sales</p>
+<small>2013 – 2015 | GPA 7.2</small>
+</div>
+
+<div class="box">
+<h3>NSHM College</h3>
+<p>BCA</p>
+<small>2009 – 2011</small>
+</div>
+</div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+<p>© 2026 Nishant Anand</p>
+</footer>
+
+<script>
+const cards=document.querySelectorAll('.card');
+
+window.addEventListener('scroll',()=>{
+cards.forEach(card=>{
+const top=card.getBoundingClientRect().top;
+if(top<window.innerHeight-100){
+card.classList.add('show');
+}
+});
+});
+</script>
+
+</body>
+</html>
