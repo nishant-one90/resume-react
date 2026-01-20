@@ -41,13 +41,13 @@ const Hero = () => {
       textAlign: 'center',
       background: 'var(--bg-body)'
     }}>
-      <h1 ref={titleRef}>Nishant Anand</h1>
-      <div ref={subtitleRef}>
+      <h1 ref={titleRef} style={{ opacity: 0 }}>Nishant Anand</h1>
+      <div ref={subtitleRef} style={{ opacity: 0 }}>
         <p style={{ fontSize: '28px', color: 'var(--text-primary)', marginTop: '20px', fontWeight: 500 }}>Business Development Manager</p>
         <p style={{ fontSize: '20px', color: 'var(--text-secondary)', marginTop: '10px' }}>Gurugram, Haryana</p>
       </div>
       
-      <div className="links" ref={linksRef} style={{ marginTop: '40px' }}>
+      <div className="links" ref={linksRef} style={{ marginTop: '40px', opacity: 0 }}>
         <a href="mailto:y2knishant@gmail.com" className="hero-link" style={{ margin: '0 15px', fontWeight: 500, display: 'inline-block', fontSize: '18px' }}>Email</a>
         <a href="https://linkedin.com/in/y2knishant" target="_blank" className="hero-link" style={{ margin: '0 15px', fontWeight: 500, display: 'inline-block', fontSize: '18px' }}>LinkedIn</a>
       </div>
