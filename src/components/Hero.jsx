@@ -32,26 +32,18 @@ const Hero = () => {
   }, []);
 
   return (
-    <div className="hero" style={{
-      height: '100vh',
-      display: 'flex',
-      flexDirection: 'column',
-      justifyContent: 'center',
-      alignItems: 'center',
-      textAlign: 'center',
-      background: 'var(--bg-body)'
-    }}>
+    <section className="hero">
       <h1 ref={titleRef} style={{ opacity: 0 }}>Nishant Anand</h1>
-      <div ref={subtitleRef} style={{ opacity: 0 }}>
-        <p style={{ fontSize: '28px', color: 'var(--text-primary)', marginTop: '20px', fontWeight: 500 }}>Business Development Manager</p>
-        <p style={{ fontSize: '20px', color: 'var(--text-secondary)', marginTop: '10px' }}>Gurugram, Haryana</p>
+      <div ref={subtitleRef} style={{ opacity: 0, textAlign: 'center' }}>
+        <p style={{ fontSize: 'clamp(20px, 4vw, 28px)', color: 'var(--text-primary)', marginTop: '20px', fontWeight: 600 }}>Business Development Manager</p>
+        <p style={{ fontSize: 'clamp(16px, 3vw, 20px)', color: 'var(--text-secondary)', marginTop: '8px' }}>Gurugram, Haryana</p>
       </div>
       
       <div className="links" ref={linksRef} style={{ marginTop: '40px', opacity: 0 }}>
         <a href="mailto:y2knishant@gmail.com" className="hero-link" style={{ margin: '0 15px', fontWeight: 500, display: 'inline-block', fontSize: '18px' }}>Email</a>
         <a href="https://linkedin.com/in/y2knishant" target="_blank" className="hero-link" style={{ margin: '0 15px', fontWeight: 500, display: 'inline-block', fontSize: '18px' }}>LinkedIn</a>
       </div>
-    </div>
+    </section>
   );
 };
 

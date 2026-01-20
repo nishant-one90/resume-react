@@ -43,13 +43,13 @@ const Education = () => {
       <h2 className="title" style={{ opacity: 0 }}>Education</h2>
       
       <div className="grid">
-        <div className="box" style={{ opacity: 0 }}>
+        <div className="box education-box" style={{ opacity: 0 }}>
           <h3>IILM University</h3>
           <p>Marketing & Sales</p>
           <small>2013 – 2015 | GPA 7.2</small>
         </div>
         
-        <div className="box" style={{ opacity: 0 }}>
+        <div className="box education-box" style={{ opacity: 0 }}>
           <h3>NSHM College</h3>
           <p>BCA</p>
           <small>2009 – 2011</small>
