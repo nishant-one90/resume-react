@@ -120,9 +120,9 @@ const TimelineItem = ({ data, index }) => {
       style={{ opacity: 0 }} // Initial state hidden for animation
     >
       <h3>{data.role}</h3>
-      <small style={{ display: 'block', marginBottom: '10px', color: '#666' }}>{data.period}</small>
+      <small>{data.period}</small>
       {data.items && (
-        <ul style={{ paddingLeft: '20px' }}>
+        <ul>
           {data.items.map((item, i) => (
             <li key={i}>{item}</li>
           ))}

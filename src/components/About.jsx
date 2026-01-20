@@ -32,7 +32,7 @@ const About = () => {
     <section ref={sectionRef}>
       <h2 className="title">About</h2>
       <p style={{ maxWidth: '800px', fontSize: '24px', lineHeight: 1.6, color: 'var(--text-secondary)' }}>
-        With a proven track record in <strong style={{ color: 'var(--text-primary)' }}>business development</strong> and <strong style={{ color: 'var(--text-primary)' }}>revenue growth</strong>, I specialize in understanding client needs and devising custom strategies to drive revenue and enhance user satisfaction. I collaborate with cross-functional teams to create impactful marketing campaigns and consistently deliver strong revenue results.
+        With a proven track record in business development and revenue growth, I specialize in understanding client needs and devising custom strategies to drive revenue and enhance user satisfaction. I collaborate with cross-functional teams to create impactful marketing campaigns and consistently deliver strong revenue results.
       </p>
     </section>
   );
