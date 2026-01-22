@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nishant Anand - Senior Business Development Manager</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #0a192f;
+            --card-bg: rgba(17, 34, 64, 0.7);
+            --card-border: rgba(100, 255, 218, 0.1);
+            --text-primary: #ccd6f6;
+            --text-secondary: #8892b0;
+            --accent: #64ffda; /* Electric Blue/Teal-ish */
+            --accent-gold: #ffd700;
+            --highlight: rgba(100, 255, 218, 0.1);
+            --folder-top: #233554;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-primary);
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            min-height: 100vh;
+            padding: 40px 20px;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        /* --- Header --- */
+        header {
+            text-align: center;
+            margin-bottom: 40px;
+            animation: fadeInDown 1s ease-out;
+        }
+
+        h1 {
+            font-size: 3rem;
+            color: var(--text-primary);
+            font-weight: 700;
+            margin-bottom: 10px;
+            letter-spacing: -1px;
+        }
+
+        .title {
+            font-size: 1.5rem;
+            color: var(--accent);
+            margin-bottom: 10px;
+            font-weight: 500;
+        }
+
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            flex-wrap: wrap;
+        }
+
+        .contact-info a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .contact-info a:hover {
+            color: var(--accent);
+        }
+
+        /* --- Summary Card (Glassmorphism) --- */
+        .summary-card {
+            background: var(--card-bg);
+            backdrop-filter: blur(10px);
+            border: 1px solid var(--card-border);
+            border-radius: 12px;
+            padding: 30px;
+            margin-bottom: 50px;
+            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
+            animation: fadeIn 1.2s ease-out;
+        }
+
+        .summary-text {
+            color: var(--text-secondary);
+            font-size: 1.05rem;
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        /* --- Section Titles --- */
+        .section-title {
+            display: flex;
+            align-items: center;
+            font-size: 1.5rem;
+            color: var(--text-primary);
+            margin-bottom: 30px;
+            font-weight: 600;
+        }
+
+        .section-title::after {
+            content: "";
+            flex-grow: 1;
+            height: 1px;
+            background: var(--text-secondary);
+            margin-left: 20px;
+            opacity: 0.3;
+        }
+
+        .section-number {
+            color: var(--accent);
+            font-family: monospace;
+            margin-right: 10px;
+            font-size: 1.2rem;
+        }
+
+        /* --- Active Timeline (Top Section) --- */
+        .timeline-section {
+            margin-bottom: 60px;
+        }
+
+        .timeline {
+            position: relative;
+            max-width: 800px;
+            margin: 0 auto;
+            padding-left: 30px;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: var(--text-secondary);
+            opacity: 0.3;
+        }
+
+        .timeline-item {
+            position: relative;
+            margin-bottom: 40px;
+            padding-left: 30px;
+            opacity: 0;
+            transform: translateY(20px);
+            animation: slideIn 0.8s forwards;
+        }
+
+        .timeline-item:nth-child(1) { animation-delay: 0.2s; }
+        .timeline-item:nth-child(2) { animation-delay: 0.4s; }
+
+        .timeline-dot {
+            position: absolute;
+            left: -6px;
+            top: 5px;
+            width: 14px;
+            height: 14px;
+            border-radius: 50%;
+            background: var(--bg-color);
+            border: 2px solid var(--accent);
+            box-shadow: 0 0 10px var(--accent);
+        }
+
+        .timeline-content {
+            background: var(--card-bg);
+            backdrop-filter: blur(5px);
+            border: 1px solid var(--card-border);
+            padding: 25px;
+            border-radius: 8px;
+            transition: transform 0.3s;
+        }
+
+        .timeline-content:hover {
+            transform: translateX(5px);
+            background: rgba(17, 34, 64, 0.9);
+        }
+
+        .role-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-bottom: 15px;
+            flex-wrap: wrap;
+        }
+
+        .role-title {
+            font-size: 1.3rem;
+            color: var(--text-primary);
+            font-weight: 600;
+        }
+
+        .role-title .company {
+            color: var(--accent);
+        }
+
+        .role-period {
+            font-family: monospace;
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+        }
+
+        .role-details h4 {
+            color: var(--text-primary);
+            font-size: 1rem;
+            margin-bottom: 8px;
+        }
+
+        .role-details p {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            margin-bottom: 0;
+        }
+
+        /* --- Archive Folders (Bottom Section) --- */
+        .archive-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+        }
+
+        .folder-card {
+            background-color: var(--card-bg);
+            padding: 25px;
+            border-radius: 6px;
+            transition: transform 0.25s, box-shadow 0.25s;
+            cursor: default;
+            border: 1px solid transparent;
+            position: relative;
+            overflow: hidden;
+            opacity: 0;
+            animation: popIn 0.6s forwards;
+        }
+
+        .folder-card:hover {
+            transform: translateY(-7px);
+            box-shadow: 0 10px 30px -15px rgba(2, 12, 27, 0.7);
+            border-color: var(--accent);
+        }
+
+        .folder-icon {
+            color: var(--accent);
+            font-size: 40px;
+            margin-bottom: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .folder-icon svg {
+            width: 40px;
+            height: 40px;
+        }
+
+        .folder-title {
+            color: var(--text-primary);
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+
+        .folder-subtitle {
+            color: var(--accent-gold); /* Using Gold accent for role titles in folders */
+            font-size: 0.9rem;
+            font-family: monospace;
+            margin-bottom: 15px;
+        }
+
+        .folder-desc {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+        }
+
+        .folder-card:nth-child(1) { animation-delay: 0.5s; }
+        .folder-card:nth-child(2) { animation-delay: 0.6s; }
+        .folder-card:nth-child(3) { animation-delay: 0.7s; }
+        .folder-card:nth-child(4) { animation-delay: 0.8s; }
+        .folder-card:nth-child(5) { animation-delay: 0.9s; }
+
+
+        /* --- Animations --- */
+        @keyframes fadeInDown {
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes slideIn {
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes popIn {
+            from { opacity: 0; transform: scale(0.9); }
+            to { opacity: 1; transform: scale(1); }
+        }
+
+        /* --- Print Styles --- */
+        @media print {
+            body {
+                background-color: #fff;
+                color: #000;
+                padding: 0;
+            }
+            .container {
+                max-width: 100%;
+            }
+            h1, .title, .section-title, .role-title, .folder-title {
+                color: #000;
+            }
+            .summary-card, .timeline-content, .folder-card {
+                background: none;
+                border: 1px solid #ccc;
+                box-shadow: none;
+                color: #000;
+            }
+            .timeline-dot {
+                border-color: #000;
+                box-shadow: none;
+            }
+            .section-number, .folder-icon, .role-title .company, .folder-subtitle {
+                color: #000; /* Or keep a dark blue */
+                font-weight: bold;
+            }
+            .contact-info a {
+                color: #000;
+                text-decoration: none;
+            }
+            .section-title::after {
+                background: #000;
+            }
+            .timeline::before {
+                background: #000;
+            }
+            /* Hide decorative animations/shadows */
+            * {
+                animation: none !important;
+                transition: none !important;
+                box-shadow: none !important;
+                text-shadow: none !important;
+            }
+        }
+
+        /* --- Responsive --- */
+        @media (max-width: 768px) {
+            h1 { font-size: 2.2rem; }
+            .title { font-size: 1.2rem; }
+            .role-header { flex-direction: column; gap: 5px; }
+            .archive-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <!-- Header -->
+        <header>
+            <h1>Nishant Anand</h1>
+            <div class="title">Senior Manager - Business Development & Monetization</div>
+            <div class="contact-info">
+                <span>Gurugram, Haryana</span>
+                <a href="mailto:y2knishant@gmail.com">y2knishant@gmail.com</a>
+                <a href="https://linkedin.com/in/y2knishant" target="_blank">linkedin.com/in/y2knishant</a>
+            </div>
+        </header>
+
+        <!-- Summary -->
+        <div class="summary-card">
+            <p class="summary-text">
+                Results-oriented Senior Business Development Manager with over 10 years of experience scaling revenue and operations for leading social media platforms (Eloelo, Meta, ShareChat). Proven track record of driving 200% revenue growth and managing high-value agency ecosystems contributing 80% of total business revenue.
+            </p>
+        </div>
+
+        <!-- Top Section: Active Timeline -->
+        <section class="timeline-section">
+            <h2 class="section-title"><span class="section-number">01.</span> Active Timeline</h2>
+            
+            <div class="timeline">
+                <!-- Role 1: Eloelo -->
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <div class="role-header">
+                            <div class="role-title">Senior Manager @ <span class="company">Eloelo</span></div>
+                            <div class="role-period">04/2024 – Present</div>
+                        </div>
+                        <div class="role-details">
+                            <h4>Focus: Revenue Growth & Monetization</h4>
+                            <p>Spearheading revenue generation through virtual gifting; managing top talent agencies contributing 80% of total business revenue. Leading a team to optimize creator supply and retention.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Role 2: Meta -->
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <div class="role-header">
+                            <div class="role-title">Product Content Operations @ <span class="company">Meta</span></div>
+                            <div class="role-period">08/2023 – 02/2024</div>
+                        </div>
+                        <div class="role-details">
+                            <h4>Focus: Strategy & Compliance</h4>
+                            <p>Spearheaded content optimization for Instagram Reels; upheld privacy guidelines while boosting engagement. Managed pilot projects for Instagram Threads.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Bottom Section: The Archive -->
+        <section class="archive-section">
+            <h2 class="section-title"><span class="section-number">02.</span> The Archive</h2>
+            
+            <div class="archive-grid">
+                <!-- ShareChat -->
+                <div class="folder-card">
+                    <div class="folder-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path></svg>
+                    </div>
+                    <h3 class="folder-title">ShareChat</h3>
+                    <div class="folder-subtitle">Associate Manager</div>
+                    <p class="folder-desc">Directed profit optimization programs increasing revenue by 200% (GMV 2 Cr p.m). Managed 60+ agencies and streamlined operations.</p>
+                </div>
+
+                <!-- MX Player -->
+                <div class="folder-card">
+                    <div class="folder-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path></svg>
+                    </div>
+                    <h3 class="folder-title">MX Player</h3>
+                    <div class="folder-subtitle">Manager - Live Ops</div>
+                    <p class="folder-desc">Managed Live Content Operations for MX Takatak & MX Live. Focused on DAU analysis and problem-solving.</p>
+                </div>
+
+                <!-- LVE Innovations -->
+                <div class="folder-card">
+                    <div class="folder-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path></svg>
+                    </div>
+                    <h3 class="folder-title">LVE Innovations</h3>
+                    <div class="folder-subtitle">BD Manager</div>
+                    <p class="folder-desc">Managed Live Audio Chat applications, revenue targets, and agency relations.</p>
+                </div>
+
+                <!-- Early Career -->
+                <div class="folder-card">
+                    <div class="folder-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path></svg>
+                    </div>
+                    <h3 class="folder-title">Early Career</h3>
+                    <div class="folder-subtitle">Archive</div>
+                    <p class="folder-desc">Roles at Douyu TV, ICONS, OYO Rooms, PepsiCo, IBM. Building the foundation of operational excellence.</p>
+                </div>
+
+                <!-- Education -->
+                <div class="folder-card">
+                    <div class="folder-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"></path><path d="M6 12v5c3 3 9 3 12 0v-5"></path></svg>
+                    </div>
+                    <h3 class="folder-title">Education</h3>
+                    <div class="folder-subtitle">Academic Background</div>
+                    <p class="folder-desc">IILM University (Marketing & Sales)<br>&<br>NSHM College (BCA)</p>
+                </div>
+            </div>
+        </section>
+    </div>
+
+</body>
+</html>

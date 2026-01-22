@@ -15,7 +15,6 @@ function App() {
       <About />
       <Timeline />
       <Skills />
-      <Education />
       <Footer />
     </div>
   );

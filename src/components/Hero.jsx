@@ -33,10 +33,12 @@ const Hero = () => {
 
   return (
     <section className="hero">
-      <h1 ref={titleRef} style={{ opacity: 0 }}>Nishant Anand</h1>
+      <h1 ref={titleRef} style={{ opacity: 0, textShadow: '2px 2px 4px rgba(0,0,0,0.3)' }}>
+        <span style={{ color: 'var(--accent)' }}>Nishant</span> <span style={{ color: 'var(--text-secondary)' }}>Anand</span>
+      </h1>
       <div ref={subtitleRef} style={{ opacity: 0, textAlign: 'center' }}>
-        <p style={{ fontSize: 'clamp(20px, 4vw, 28px)', color: 'var(--text-primary)', marginTop: '20px', fontWeight: 600 }}>Business Development Manager</p>
-        <p style={{ fontSize: 'clamp(16px, 3vw, 20px)', color: 'var(--text-secondary)', marginTop: '8px' }}>Gurugram, Haryana</p>
+        <p style={{ fontSize: 'clamp(20px, 4vw, 28px)', color: 'var(--text-primary)', marginTop: '20px', fontWeight: 600 }}>Senior Manager Business Development</p>
+        <p style={{ fontSize: 'clamp(16px, 3vw, 20px)', color: 'var(--text-secondary)', marginTop: '8px' }}>Bengaluru, Karnataka</p>
       </div>
       
       <div className="links" ref={linksRef} style={{ marginTop: '40px', opacity: 0 }}>

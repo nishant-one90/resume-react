@@ -70,13 +70,14 @@ h1 {
   line-height: 1.05;
   background: linear-gradient(180deg, var(--text-primary) 0%, var(--text-secondary) 150%);
   -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
   margin-bottom: 24px;
 }
 
 h2.title {
   font-size: clamp(32px, 5vw, 56px);
-  margin-bottom: 80px;
+  margin-bottom: 40px;
   text-align: center;
   width: 100%;
 }
@@ -90,13 +91,19 @@ p {
 
 /* Sections */
 section {
-  padding: 120px 5%;
-  min-height: 100vh;
+  padding: 40px 5%;
+  min-height: auto;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   position: relative;
+}
+
+.hero {
+  min-height: auto;
+  padding-top: 100px;
+  padding-bottom: 0;
 }
 
 section:nth-child(even) {
@@ -334,5 +341,39 @@ footer {
   
   section {
     padding: 100px 5%;
+  }
+}
+
+/* Timeline Date Scale - Axis Styling */
+.timeline-date-desktop {
+  position: absolute;
+  top: 38px; /* Aligned with the dot (top:40px) */
+  width: 42%; /* Fit within the 46% spacer area */
+  color: var(--text-secondary); /* Light grey/white as per screenshot */
+  font-size: 14px;
+  font-weight: 500;
+  white-space: nowrap;
+  opacity: 0.8;
+  font-family: monospace; /* Optional: gives a more 'technical/scale' look */
+}
+
+/* Default Row: Content Right (Spacer Left), so Date should be LEFT */
+.timeline-row .timeline-date-desktop {
+  right: 54%; /* Left of the center line */
+  left: auto;
+  text-align: right;
+}
+
+/* Right Row: Content Left (Spacer Right), so Date should be RIGHT */
+.timeline-row.right .timeline-date-desktop {
+  left: 54%; /* Right of the center line */
+  right: auto;
+  text-align: left;
+}
+
+/* Mobile: Hide axis date */
+@media (max-width: 900px) {
+  .timeline-date-desktop {
+    display: none;
   }
 }

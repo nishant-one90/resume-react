@@ -3,78 +3,142 @@ import anime from 'animejs';
 
 const timelineData = [
   {
-    role: "Eloelo – Senior Manager",
-    period: "Apr 2024 – Present | Bengaluru",
+    company: "Eloelo",
+    role: "Senior Manager",
+    period: "April 2024 – Present",
+    location: "Bengaluru, Karnataka, India",
     items: [
-      "Driving MoM & QoQ revenue via virtual gifting",
-      "Managing top agencies contributing 80% revenue",
-      "Optimized commission & creator earning policies",
-      "Improved viewer-to-streamer ratios"
+      "Revenue Growth & Monetization: Spearheading revenue generation through the virtual gifting model, ensuring consistent month-over-month and quarterly revenue growth by optimizing creator supply.",
+      "Key Account Management: Directly managing top talent resource agencies contributing 80% of total business revenue, fostering strong relationships to maximize profitability.",
+      "Business Strategy & Market Adaptation: Continuously refining agency contracts, creator earning policies, and commission structures based on competitive analysis and market trends to drive engagement and platform retention.",
+      "Performance Metrics & Optimization: Ensuring optimal viewer-to-streamer ratios by implementing effective creator acquisition and retention strategies, enhancing overall user engagement."
     ]
   },
   {
-    role: "Meta – Product Content Operations",
-    period: "Aug 2023 – Feb 2024 | Bengaluru",
+    company: "Meta",
+    role: "Product Content Operations (CW)",
+    period: "August 2023 – February 2024",
+    location: "Bengaluru, Karnataka, India",
     items: [
-      "Optimized Instagram Reels content",
-      "Policy & privacy decision maker",
-      "Pilot project on Threads feed",
-      "Tools: Salesforce, Freshdesk CMS"
+      "Product Content Operations: As a seasoned content strategist, I spearheaded content optimization initiatives for Instagram Reels, resulting in a significant boost in engagement and follower growth. I played a pivotal role as a decision-maker in upholding Meta's (Instagram's) privacy and policy guidelines, ensuring content compliance while maintaining user safety. Leveraging data analysis, I developed a deep understanding of content format types, continually refining and enhancing content production for short video formats. By incorporating feedback loops, I ensured the accuracy of content suggestions, reflecting a strong commitment to user preferences and satisfaction.",
+      "Creator Management and Optimization: In the realm of creator management, I successfully managed a pilot project for content optimization on Instagram Threads feed, driving increased visibility and interaction for users. Through trend-spotting initiatives, I identified trending audio, hook steps, and other formats on Instagram Reels, ensuring content relevance and resonance with the target audience. Utilizing data-driven insights and best practices, I provided strategic guidance to creators, empowering them to maximize the impact of their content and achieve their goals effectively. Furthermore, I proficiently utilized tools such as Freshdesk CMS, Salesforce, and SRT Internal CMS tool to streamline workflows and optimize internal content management systems, demonstrating proficiency in leveraging technology to enhance operational efficiency."
     ]
   },
   {
-    role: "Career Break",
-    period: "Mar 2023 – Jul 2023",
-    desc: "Layoff / Position eliminated"
+    company: "Career Break",
+    role: "",
+    period: "March 2023 – July 2023",
+    location: "Bengaluru, Karnataka, India",
+    desc: "Layoff/position eliminated"
   },
   {
-    role: "ShareChat – Associate Manager",
-    period: "May 2021 – Feb 2023 | Mumbai",
+    company: "ShareChat",
+    role: "Associate Manager",
+    period: "May 2021 – February 2023",
+    location: "Mumbai, Maharashtra, India",
     items: [
-      "45% interaction growth via new live model",
-      "Managed 60+ agencies",
-      "Revenue scaled 200% (₹2Cr GMV/month)",
-      "Led team of 6 professionals"
+      "Business Development: Pilot tested and rolled out a new live streaming process (fixed and target model) initiative leading to an increase of 45% in daily interaction rate.",
+      "We maximized user engagement and acquisition through events and activities with Live streamers, culminating in 500+ active users.",
+      "Optimized overall operations using data-driven approaches to streamline the end-to-end processes, trimming turnaround time by 20%.",
+      "Delivered comprehensive end-to-end streaming service for 600+ creators, increased engagement by 20%. Developed and implemented training and grooming sessions, increased performance by 15%",
+      "Collaborates with other back-office team members to ensure the smooth execution of processes",
+      "Operations & Agency management: Created an SOP for agency hiring, payments, creator acquisition and elimination",
+      "Managed 60+ Agencies, leading daily workflow optimization to reduce job turnaround time by 15% and handling a team of 6 professionals to manage an agency.",
+      "Mapped out process redundancies to streamline agency operations, reducing operational activities. Developed tailored approaches to training team alignment across 3 departments",
+      "Conducted in-depth analyses of agency effectiveness & regulatory compliance of leading 30+ agencies",
+      "Revenue growth: Directed the profit optimisation program to increase revenue by 200%, resulting in a total GMV of 2 cr p.m We analyzed user demand & identified capital growth investments to generate revenue."
     ]
   },
   {
-    role: "MX Player – Manager Live Ops",
-    period: "May 2021 – Mar 2022",
+    company: "MX Player",
+    role: "Manager-Live Operations",
+    period: "May 2021 – March 2022",
+    location: "Bengaluru, KA, India",
     items: [
-      "DAU performance analysis",
-      "Product feedback & execution"
+      "Live Content Operations | MX Takatak | MX Live",
+      "External operations",
+      "Live streaming Performance Analyze (DAU)",
+      "Problem-solving",
+      "Effective execution",
+      "Product/platform feedback"
     ]
   },
   {
-    role: "LVE Innovations – BDM",
-    period: "Sep 2020 – May 2021",
+    company: "LVE Innovations",
+    role: "Business Development Manager",
+    period: "September 2020 – May 2021",
+    location: "Gurgaon, Haryana, India",
     items: [
-      "Live audio app operations",
-      "Revenue & agency management"
+      "Live Audio Chat Application",
+      "Process Operation",
+      "Business Development",
+      "Revenue Targets",
+      "Agency Managed"
     ]
   },
   {
-    role: "Douyu TV – India BDM",
-    period: "Nov 2018 – May 2020",
+    company: "Douyu TV",
+    role: "Business Development Manager India",
+    period: "November 2018 – May 2020",
+    location: "Gurgaon, India",
     items: [
-      "Live streaming & gaming ecosystem",
-      "Business & operations leadership"
+      "Douyo HK Ltd (www.nonolive.com)",
+      "Live | Video | Games",
+      "Operation & Business Development",
+      "(Live Streaming and Video making App)"
     ]
   },
   {
-    role: "ICONS – Business Executive",
-    period: "May 2016 – Aug 2018",
+    company: "ICONS",
+    role: "Business Development Executive",
+    period: "May 2016 – August 2018",
+    location: "Gurgaon, Haryana, India",
     items: [
-      "Media sales & client servicing"
+      "Media Sales, Client Servicing & Online sales"
     ]
   },
   {
-    role: "OYO Rooms – Demand Marketing",
-    period: "Mar 2015 – Apr 2016"
+    company: "OYO Rooms",
+    role: "Demand Marketing",
+    period: "March 2015 – April 2016",
+    location: "Gurgaon, India",
+    items: [
+      "Offline Marketing (ATL & BTL)"
+    ]
   },
   {
-    role: "IBM – IT Practitioner",
-    period: "Jun 2011 – Jul 2013"
+    company: "PepsiCo",
+    role: "Internship",
+    period: "May 2014 – July 2014",
+    location: "Gurgaon, India",
+    items: [
+      "TT Cluster Correction & Outlet Mapping",
+      "Internship channel sales (Real Juices)"
+    ]
+  },
+  {
+    company: "IILM University",
+    role: "Marketing & Sales",
+    period: "2013 – 2015",
+    location: "",
+    desc: "PGDM / MBA | GPA 7.2"
+  },
+  {
+    company: "IBM Global Process Services",
+    role: "IT Practitioner",
+    period: "June 2011 – July 2013",
+    location: "Gurgaon, Haryana, India",
+    items: [
+      "Lotus, Data Management & ID Admin",
+      "IBM Tools Support"
+    ]
+  },
+  {
+    company: "NSHM College",
+    role: "BCA",
+    period: "2009 – 2011",
+    location: "",
+    desc: "Bachelor of Computer Applications"
   }
 ];
 
@@ -111,13 +175,38 @@ const TimelineItem = ({ data, index }) => {
     <div className={`timeline-row ${isRight ? 'right' : ''}`}>
       <div className="timeline-spacer"></div>
       <div className="timeline-dot"></div>
+      <div className="timeline-date-desktop">
+        {data.period}
+      </div>
       <div 
         ref={itemRef} 
         className="timeline-content"
         style={{ opacity: 0 }}
       >
-        <h3>{data.role}</h3>
-        <small>{data.period}</small>
+        <h3>
+          <span style={{ color: 'var(--accent)' }}>{data.company}</span>
+          {data.role && <span> – {data.role}</span>}
+        </h3>
+        <small className="timeline-date-mobile" style={{ 
+          color: '#ff9500', 
+          fontWeight: 700, 
+          fontSize: '14px',
+          display: 'block',
+          marginBottom: '4px'
+        }}>
+          {data.period}
+        </small>
+        {data.location && (
+          <span style={{ 
+            display: 'block', 
+            fontSize: '13px', 
+            color: 'var(--text-secondary)',
+            marginBottom: '16px' 
+          }}>
+            {data.location}
+          </span>
+        )}
+        
         {data.items && (
           <ul>
             {data.items.map((item, i) => (
