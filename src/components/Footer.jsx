@@ -1,12 +1,23 @@
 import React from 'react';
 import { Mail, Linkedin, Github } from 'lucide-react';
+import { useAnimeInView } from '../hooks/useAnimeInView';
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
+  
+  const contentRef = useAnimeInView({
+    opacity: [0, 1],
+    translateY: [20, 0],
+    duration: 800,
+    easing: 'easeOutExpo'
+  });
 
   return (
     <footer className="py-12 px-6 bg-apple-gray border-t border-gray-200">
-      <div className="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
+      <div 
+        ref={contentRef}
+        className="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6 opacity-0"
+      >
         <p className="text-apple-subtext text-sm">
           &copy; {currentYear} Nishant Anand. All rights reserved.
         </p>

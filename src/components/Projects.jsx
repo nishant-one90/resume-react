@@ -1,5 +1,6 @@
-import React from 'react';
-import { motion } from 'framer-motion';
+import React, { useEffect, useRef } from 'react';
+import anime from 'animejs';
+import { useAnimeInView } from '../hooks/useAnimeInView';
 import { ArrowUpRight } from 'lucide-react';
 
 const projects = [
@@ -24,29 +25,53 @@ const projects = [
 ];
 
 const Projects = () => {
+  const titleRef = useAnimeInView({
+    opacity: [0, 1],
+    translateY: [20, 0],
+    duration: 600,
+    easing: 'easeOutQuad'
+  });
+
+  const gridRef = useRef(null);
+
+  useEffect(() => {
+    const element = gridRef.current;
+    if (!element) return;
+
+    const observer = new IntersectionObserver(([entry]) => {
+      if (entry.isIntersecting) {
+        anime({
+          targets: element.children,
+          opacity: [0, 1],
+          translateY: [30, 0],
+          delay: anime.stagger(100),
+          easing: 'easeOutQuad',
+          duration: 600
+        });
+        observer.unobserve(element);
+      }
+    }, { threshold: 0.1 });
+
+    observer.observe(element);
+
+    return () => observer.disconnect();
+  }, []);
+
   return (
     <section id="projects" className="py-24 px-6 bg-apple-gray">
       <div className="max-w-6xl mx-auto">
-        <motion.h2 
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="text-4xl font-bold text-apple-dark text-center mb-16"
-        >
-          Key Projects
-        </motion.h2>
+        <div ref={titleRef} className="opacity-0">
+          <h2 className="text-4xl font-bold text-apple-dark text-center mb-16">
+            Key Projects
+          </h2>
+        </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div ref={gridRef} className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {projects.map((project, index) => (
-            <motion.a
+            <a
               key={index}
               href={project.link}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: index * 0.1 }}
-              whileHover={{ scale: 1.02 }}
-              className="group block bg-white rounded-3xl overflow-hidden shadow-sm hover:shadow-2xl transition-all duration-300"
+              className="group block bg-white rounded-3xl overflow-hidden shadow-sm hover:shadow-2xl transition-all duration-300 hover:scale-102 opacity-0"
             >
               <div className="p-8 h-full flex flex-col">
                 <div className="flex justify-between items-start mb-4">
@@ -71,7 +96,7 @@ const Projects = () => {
                   ))}
                 </div>
               </div>
-            </motion.a>
+            </a>
           ))}
         </div>
       </div>

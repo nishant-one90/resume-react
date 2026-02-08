@@ -1,6 +1,7 @@
-import React, { useState } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import React, { useState, useRef, useEffect } from 'react';
+import anime from 'animejs';
 import { Briefcase, GraduationCap, Calendar, ChevronDown } from 'lucide-react';
+import { useAnimeInView } from '../hooks/useAnimeInView';
 
 const experiences = [
   {
@@ -178,14 +179,68 @@ const TimelineItem = ({ data, type, index }) => {
   const [isOpen, setIsOpen] = useState(false);
   const isWork = type === 'work';
   const Icon = isWork ? Briefcase : GraduationCap;
+  
+  // Animation for the whole item appearing
+  const itemRef = useAnimeInView({
+    opacity: [0, 1],
+    translateY: [30, 0],
+    duration: 800,
+    easing: 'easeOutExpo',
+    delay: index * 100
+  });
+
+  // Refs for accordion animation
+  const contentRef = useRef(null);
+  const chevronRef = useRef(null);
+
+  useEffect(() => {
+    // Animate chevron
+    anime({
+      targets: chevronRef.current,
+      rotate: isOpen ? 180 : 0,
+      duration: 300,
+      easing: 'easeOutQuad'
+    });
+
+    // Animate content
+    if (isOpen) {
+      // Get the natural height by temporarily setting height to auto
+      const el = contentRef.current;
+      el.style.height = 'auto';
+      const height = el.scrollHeight;
+      el.style.height = '0px';
+
+      anime({
+        targets: el,
+        height: [0, height],
+        opacity: [0, 1],
+        marginTop: [0, 12],
+        duration: 300,
+        easing: 'easeOutQuad',
+        complete: () => {
+          el.style.height = 'auto'; // Keep it auto for responsiveness
+        }
+      });
+    } else {
+      const el = contentRef.current;
+      // Start from current computed height
+      el.style.height = el.scrollHeight + 'px';
+      
+      anime({
+        targets: el,
+        height: 0,
+        opacity: 0,
+        marginTop: 0,
+        duration: 300,
+        easing: 'easeOutQuad'
+      });
+    }
+  }, [isOpen]);
 
   return (
-    <motion.div 
-      initial={{ opacity: 0, y: 30 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true }}
-      transition={{ delay: index * 0.1 }}
-      className="relative pl-8 md:pl-0 group"
+    <div 
+      ref={itemRef}
+      className="relative pl-8 md:pl-0 group opacity-0" // Start with opacity 0
     >
       {/* Timeline Line */}
       <div className="absolute left-0 md:left-1/2 top-0 bottom-0 w-px bg-apple-gray transform md:-translate-x-1/2"></div>
@@ -199,8 +254,7 @@ const TimelineItem = ({ data, type, index }) => {
         <div className="hidden md:block w-5/12"></div>
         
         <div className="md:w-5/12 mb-10 pl-6 md:pl-0">
-          <motion.div 
-            layout
+          <div 
             onClick={() => setIsOpen(!isOpen)}
             className="bg-white p-6 rounded-2xl shadow-sm hover:shadow-md transition-shadow duration-300 border border-apple-gray/50 cursor-pointer relative overflow-hidden"
           >
@@ -217,48 +271,46 @@ const TimelineItem = ({ data, type, index }) => {
                   {isWork ? data.company : data.school}
                 </div>
               </div>
-              <motion.div
-                animate={{ rotate: isOpen ? 180 : 0 }}
-                transition={{ duration: 0.3 }}
+              <div
+                ref={chevronRef}
                 className="text-apple-subtext mt-2"
               >
                 <ChevronDown className="w-5 h-5" />
-              </motion.div>
+              </div>
             </div>
             
-            <AnimatePresence>
-              {isOpen && (
-                <motion.div
-                  initial={{ opacity: 0, height: 0, marginTop: 0 }}
-                  animate={{ opacity: 1, height: "auto", marginTop: 12 }}
-                  exit={{ opacity: 0, height: 0, marginTop: 0 }}
-                  transition={{ duration: 0.3 }}
-                >
-                  <div className="text-apple-subtext leading-relaxed text-sm pt-2 border-t border-apple-gray/30">
-                    {isWork ? data.description : data.details}
-                  </div>
-                </motion.div>
-              )}
-            </AnimatePresence>
-          </motion.div>
+            <div
+              ref={contentRef}
+              style={{ height: 0, opacity: 0, marginTop: 0, overflow: 'hidden' }}
+            >
+              <div className="text-apple-subtext leading-relaxed text-sm pt-2 border-t border-apple-gray/30">
+                {isWork ? data.description : data.details}
+              </div>
+            </div>
+          </div>
         </div>
       </div>
-    </motion.div>
+    </div>
   );
 };
 
 const Timeline = () => {
+  const titleRef = useAnimeInView({
+    opacity: [0, 1],
+    translateY: [20, 0],
+    duration: 800,
+    easing: 'easeOutExpo'
+  });
+
   return (
     <section className="py-24 px-6 bg-white overflow-hidden">
       <div className="max-w-6xl mx-auto">
-        <motion.h2 
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="text-4xl font-bold text-apple-dark text-center mb-16"
+        <h2 
+          ref={titleRef}
+          className="text-4xl font-bold text-apple-dark text-center mb-16 opacity-0"
         >
           Journey
-        </motion.h2>
+        </h2>
 
         <div className="relative">
           {experiences.map((exp, index) => (

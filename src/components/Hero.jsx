@@ -1,37 +1,59 @@
-import React from 'react';
-import { motion } from 'framer-motion';
+import React, { useEffect, useRef } from 'react';
+import anime from 'animejs';
 import { ArrowDown, Download } from 'lucide-react';
 
 const Hero = () => {
+  const titleRef = useRef(null);
+  const subtitleRef = useRef(null);
+  const buttonsRef = useRef(null);
+  const arrowRef = useRef(null);
+
+  useEffect(() => {
+    // Initial timeline
+    const tl = anime.timeline({
+      easing: 'easeOutExpo',
+      duration: 1000,
+    });
+
+    tl.add({
+      targets: titleRef.current,
+      opacity: [0, 1],
+      translateY: [30, 0],
+    })
+    .add({
+      targets: subtitleRef.current,
+      opacity: [0, 1],
+      translateY: [30, 0],
+    }, '-=800')
+    .add({
+      targets: buttonsRef.current,
+      opacity: [0, 1],
+      translateY: [20, 0],
+    }, '-=800')
+    .add({
+      targets: arrowRef.current,
+      opacity: [0, 1],
+      duration: 1000,
+    }, '-=500');
+
+  }, []);
+
   return (
     <section className="min-h-screen flex flex-col justify-center items-center relative overflow-hidden bg-white px-6">
       <div className="max-w-4xl w-full text-center z-10">
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, ease: "easeOut" }}
-        >
+        <div ref={titleRef} className="opacity-0">
           <h1 className="text-6xl md:text-8xl font-bold tracking-tight text-apple-dark mb-6">
             Nishant Anand
           </h1>
-        </motion.div>
+        </div>
 
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
-        >
+        <div ref={subtitleRef} className="opacity-0">
           <p className="text-xl md:text-3xl text-apple-subtext font-medium mb-10 max-w-2xl mx-auto">
             Senior Manager Business Development
           </p>
-        </motion.div>
+        </div>
 
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
-          className="flex flex-col sm:flex-row gap-4 justify-center items-center"
-        >
+        <div ref={buttonsRef} className="opacity-0 flex flex-col sm:flex-row gap-4 justify-center items-center">
           <a
             href="#projects"
             className="px-8 py-3 bg-apple-blue text-white rounded-full font-medium text-lg hover:bg-blue-600 transition-colors duration-300 shadow-lg hover:shadow-xl"
@@ -45,17 +67,15 @@ const Hero = () => {
             Download Resume
             <Download className="w-4 h-4 group-hover:translate-y-0.5 transition-transform" />
           </a>
-        </motion.div>
+        </div>
       </div>
 
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 1, duration: 1 }}
-        className="absolute bottom-10 left-1/2 transform -translate-x-1/2 text-apple-subtext animate-bounce"
+      <div
+        ref={arrowRef}
+        className="absolute bottom-10 left-1/2 transform -translate-x-1/2 text-apple-subtext animate-bounce opacity-0"
       >
         <ArrowDown className="w-6 h-6" />
-      </motion.div>
+      </div>
     </section>
   );
 };
