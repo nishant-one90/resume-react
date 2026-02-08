@@ -1,6 +1,6 @@
-import React from 'react';
-import { motion } from 'framer-motion';
-import { Briefcase, GraduationCap, Calendar } from 'lucide-react';
+import React, { useState } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
+import { Briefcase, GraduationCap, Calendar, ChevronDown } from 'lucide-react';
 
 const experiences = [
   {
@@ -51,6 +51,7 @@ const education = [
 ];
 
 const TimelineItem = ({ data, type, index }) => {
+  const [isOpen, setIsOpen] = useState(false);
   const isWork = type === 'work';
   const Icon = isWork ? Briefcase : GraduationCap;
 
@@ -74,21 +75,48 @@ const TimelineItem = ({ data, type, index }) => {
         <div className="hidden md:block w-5/12"></div>
         
         <div className="md:w-5/12 mb-10 pl-6 md:pl-0">
-          <div className="bg-white p-6 rounded-2xl shadow-sm hover:shadow-md transition-shadow duration-300 border border-apple-gray/50">
-            <span className="inline-flex items-center gap-2 text-sm text-apple-blue font-medium mb-2 bg-blue-50 px-3 py-1 rounded-full">
-              <Calendar className="w-3 h-3" />
-              {data.period}
-            </span>
-            <h3 className="text-xl font-bold text-apple-dark mt-2">
-              {isWork ? data.role : data.degree}
-            </h3>
-            <div className="text-lg font-medium text-apple-text mt-1">
-              {isWork ? data.company : data.school}
+          <motion.div 
+            layout
+            onClick={() => setIsOpen(!isOpen)}
+            className="bg-white p-6 rounded-2xl shadow-sm hover:shadow-md transition-shadow duration-300 border border-apple-gray/50 cursor-pointer relative overflow-hidden"
+          >
+            <div className="flex justify-between items-start">
+              <div>
+                <span className="inline-flex items-center gap-2 text-sm text-apple-blue font-medium mb-2 bg-blue-50 px-3 py-1 rounded-full">
+                  <Calendar className="w-3 h-3" />
+                  {data.period}
+                </span>
+                <h3 className="text-xl font-bold text-apple-dark mt-2">
+                  {isWork ? data.role : data.degree}
+                </h3>
+                <div className="text-lg font-medium text-apple-text mt-1">
+                  {isWork ? data.company : data.school}
+                </div>
+              </div>
+              <motion.div
+                animate={{ rotate: isOpen ? 180 : 0 }}
+                transition={{ duration: 0.3 }}
+                className="text-apple-subtext mt-2"
+              >
+                <ChevronDown className="w-5 h-5" />
+              </motion.div>
             </div>
-            <p className="text-apple-subtext mt-3 leading-relaxed text-sm">
-              {isWork ? data.description : data.details}
-            </p>
-          </div>
+            
+            <AnimatePresence>
+              {isOpen && (
+                <motion.div
+                  initial={{ opacity: 0, height: 0, marginTop: 0 }}
+                  animate={{ opacity: 1, height: "auto", marginTop: 12 }}
+                  exit={{ opacity: 0, height: 0, marginTop: 0 }}
+                  transition={{ duration: 0.3 }}
+                >
+                  <p className="text-apple-subtext leading-relaxed text-sm pt-2 border-t border-apple-gray/30">
+                    {isWork ? data.description : data.details}
+                  </p>
+                </motion.div>
+              )}
+            </AnimatePresence>
+          </motion.div>
         </div>
       </div>
     </motion.div>
