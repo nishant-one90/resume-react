@@ -6,47 +6,171 @@ const experiences = [
   {
     company: "Eloelo",
     role: "Senior Manager",
-    period: "April 2024 – Present",
-    description: "Spearheading revenue generation through virtual gifting models and optimizing creator supply. Managing top talent agencies contributing 80% of total revenue."
+    period: "04/2024 - Present",
+    description: (
+      <ul className="list-disc pl-5 space-y-2">
+        <li><strong>Revenue Growth & Monetization:</strong> Spearheading revenue generation through the virtual gifting model, ensuring consistent month-over-month and quarterly revenue growth by optimizing creator supply.</li>
+        <li><strong>Key Account Management:</strong> Directly managing top talent resource agencies contributing 80% of total business revenue, fostering strong relationships to maximize profitability.</li>
+        <li><strong>Business Strategy & Market Adaptation:</strong> Continuously refining agency contracts, creator earning policies, and commission structures based on competitive analysis and market trends to drive engagement and platform retention.</li>
+        <li><strong>Performance Metrics & Optimization:</strong> Ensuring optimal viewer-to-streamer ratios by implementing effective creator acquisition and retention strategies, enhancing overall user engagement.</li>
+      </ul>
+    )
   },
   {
     company: "Meta",
     role: "Product Content Operations (CW)",
-    period: "August 2023 – February 2024",
-    description: "Spearheaded content optimization for Instagram Reels, boosting engagement. Managed pilot projects for Threads feed optimization."
+    period: "08/2023 - 02/2024",
+    description: (
+      <div className="space-y-4">
+        <div>
+          <h4 className="font-semibold text-apple-dark mb-2">Product Content Operations:</h4>
+          <p>As a seasoned content strategist, I spearheaded content optimization initiatives for Instagram Reels, resulting in a significant boost in engagement and follower growth. I played a pivotal role as a decision-maker in upholding Meta's (Instagram's) privacy and policy guidelines, ensuring content compliance while maintaining user safety. Leveraging data analysis, I developed a deep understanding of content format types, continually refining and enhancing content production for short video formats. By incorporating feedback loops, I ensured the accuracy of content suggestions, reflecting a strong commitment to user preferences and satisfaction.</p>
+        </div>
+        <div>
+          <h4 className="font-semibold text-apple-dark mb-2">Creator Management and Optimization:</h4>
+          <p>In the realm of creator management, I successfully managed a pilot project for content optimization on Instagram Threads feed, driving increased visibility and interaction for users. Through trend-spotting initiatives, I identified trending audio, hook steps, and other formats on Instagram Reels, ensuring content relevance and resonance with the target audience. Utilizing data-driven insights and best practices, I provided strategic guidance to creators, empowering them to maximize the impact of their content and achieve their goals effectively. Furthermore, I proficiently utilized tools such as Freshdesk CMS, Salesforce, and SRT Internal CMS tool to streamline workflows and optimize internal content management systems, demonstrating proficiency in leveraging technology to enhance operational efficiency.</p>
+        </div>
+        <p>This encapsulates a glimpse of my expertise and accomplishments in product content operations and creator management. With a proven ability to drive results and a passion for innovation, I am poised to make significant contributions to any organization.</p>
+      </div>
+    )
+  },
+  {
+    company: "Career Break",
+    role: "Layoff/position eliminated",
+    period: "03/2023 - 07/2023",
+    description: "Bengaluru, Karnataka, India"
   },
   {
     company: "ShareChat",
     role: "Associate Manager",
-    period: "May 2021 – February 2023",
-    description: "Directed profit optimization programs increasing revenue by 200%. Managed 60+ agencies and streamlined operations."
+    period: "05/2021 - 02/2023",
+    description: (
+      <div className="space-y-4">
+        <div>
+          <h4 className="font-semibold text-apple-dark mb-2">Business Development</h4>
+          <ul className="list-disc pl-5 space-y-1">
+            <li>Pilot tested and rolled out a new live streaming process (fixed and target model) initiative leading to an increase of 45% in daily interaction rate.</li>
+            <li>We maximized user engagement and acquisition through events and activities with Live streamers, culminating in 500+ active users.</li>
+            <li>Optimized overall operations using data-driven approaches to streamline the end-to-end processes, trimming turnaround time by 20%.</li>
+            <li>Delivered comprehensive end-to-end streaming service for 600+ creators, increased engagement by 20%. Developed and implemented training and grooming sessions, increased performance by 15%</li>
+            <li>Collaborates with other back-office team members to ensure the smooth execution of processes</li>
+          </ul>
+        </div>
+        <div>
+          <h4 className="font-semibold text-apple-dark mb-2">Operations & Agency management</h4>
+          <ul className="list-disc pl-5 space-y-1">
+            <li>Created an SOP for agency hiring, payments, creator acquisition and elimination</li>
+            <li>Managed 60+ Agencies, leading daily workflow optimization to reduce job turnaround time by 15% and handling a team of 6 professionals to manage an agency.</li>
+            <li>Mapped out process redundancies to streamline agency operations, reducing operational activities. Developed tailored approaches to training team alignment across 3 departments</li>
+            <li>Conducted in-depth analyses of agency effectiveness & regulatory compliance of leading 30+ agencies</li>
+          </ul>
+        </div>
+        <div>
+          <h4 className="font-semibold text-apple-dark mb-2">Revenue growth</h4>
+          <ul className="list-disc pl-5 space-y-1">
+            <li>Directed the profit optimisation program to increase revenue by 200%, resulting in a total GMV of 2 cr p.m We analyzed user demand & identified capital growth investments to generate revenue.</li>
+          </ul>
+        </div>
+      </div>
+    )
   },
   {
     company: "MX Player",
     role: "Manager-Live Operations",
-    period: "May 2021 – March 2022",
-    description: "Managed live content operations for MX Takatak and MX Live. Analyzed live streaming performance metrics."
+    period: "05/2021 - 03/2022",
+    description: (
+      <ul className="list-disc pl-5 space-y-2">
+        <li>Live Content Operations | MX Takatak | MX Live</li>
+        <li>External operations</li>
+        <li>Live streaming Performance Analyze (DAU)</li>
+        <li>Problem-solving</li>
+        <li>Effective execution</li>
+        <li>Product/platform feedback</li>
+      </ul>
+    )
   },
   {
-    company: "Douyu TV",
+    company: "LVE Innovations",
+    role: "Business Development Manager",
+    period: "09/2020 - 05/2021",
+    description: (
+      <ul className="list-disc pl-5 space-y-2">
+        <li>Live Audio Chat Application</li>
+        <li>Process Operation</li>
+        <li>Business Development</li>
+        <li>Revenue Targets</li>
+        <li>Agency Managed</li>
+      </ul>
+    )
+  },
+  {
+    company: "斗鱼TV",
     role: "Business Development Manager India",
-    period: "November 2018 – May 2020",
-    description: "Led operations and business development for live streaming and gaming verticals."
+    period: "11/2018 - 05/2020",
+    description: (
+      <ul className="list-disc pl-5 space-y-2">
+        <li>Douyo HK Ltd (www.nonolive.com)</li>
+        <li>Live | Video | Games</li>
+        <li>Operation & Business Development</li>
+        <li>(Live Streaming and Video making App)</li>
+      </ul>
+    )
+  },
+  {
+    company: "Interactive Communication Services (I) Pvt. Ltd. (ICONS)",
+    role: "Business Development Executive",
+    period: "05/2016 - 08/2018",
+    description: (
+      <ul className="list-disc pl-5 space-y-2">
+        <li>Media Sales, Client Servicing & Online sales</li>
+      </ul>
+    )
+  },
+  {
+    company: "OYO Rooms",
+    role: "Demand Marketing",
+    period: "03/2015 - 04/2016",
+    description: (
+      <ul className="list-disc pl-5 space-y-2">
+        <li>Offline Marketing (ATL & BTL)</li>
+      </ul>
+    )
+  },
+  {
+    company: "PepsiCo",
+    role: "TT Cluster Correction & Outlet Mapping (Internship)",
+    period: "05/2014 - 07/2014",
+    description: (
+      <ul className="list-disc pl-5 space-y-2">
+        <li>Internship channel sales (Real Juices)</li>
+      </ul>
+    )
+  },
+  {
+    company: "IBM Global Process Services",
+    role: "IT practitioner",
+    period: "06/2011 - 07/2013",
+    description: (
+      <ul className="list-disc pl-5 space-y-2">
+        <li>Lotus, Data Management & ID Admin</li>
+        <li>IBM Tools Support</li>
+      </ul>
+    )
   }
 ];
 
 const education = [
   {
-    school: "IILM University",
-    degree: "Marketing & Sales",
-    period: "2013 – 2015",
-    details: "GPA 7.2"
+    school: "IILM University, Gurugram",
+    degree: "Degree",
+    period: "2013 - 2015",
+    details: "Marketing & Sales"
   },
   {
-    school: "NSHM College",
-    degree: "BCA",
-    period: "2009 – 2011",
-    details: ""
+    school: "NSHM College of Management and Technology",
+    degree: "Degree",
+    period: "2009 - 2011",
+    details: "Bachelor of Computer Application"
   }
 ];
 
@@ -110,9 +234,9 @@ const TimelineItem = ({ data, type, index }) => {
                   exit={{ opacity: 0, height: 0, marginTop: 0 }}
                   transition={{ duration: 0.3 }}
                 >
-                  <p className="text-apple-subtext leading-relaxed text-sm pt-2 border-t border-apple-gray/30">
+                  <div className="text-apple-subtext leading-relaxed text-sm pt-2 border-t border-apple-gray/30">
                     {isWork ? data.description : data.details}
-                  </p>
+                  </div>
                 </motion.div>
               )}
             </AnimatePresence>
