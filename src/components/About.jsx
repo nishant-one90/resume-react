@@ -37,11 +37,7 @@ const About = () => {
             </h3>
             
             <p className="text-lg text-apple-subtext leading-relaxed">
-              Results-oriented Senior Business Development Manager with over 10 years of experience scaling revenue and operations for leading social media and live-streaming platforms (Eloelo, Meta, ShareChat). Proven track record of driving 200% revenue growth and managing high-value agency ecosystems contributing to 80% of total business revenue.
-            </p>
-
-            <p className="text-lg text-apple-subtext leading-relaxed">
-              Expert in virtual gifting models, creator acquisition, and cross-functional team leadership. I bridge the gap between content strategy and profitability, utilizing data-driven insights to optimize creator supply and maximize user retention.
+              Results-driven Senior Manager of Business Development with over 10+ years of experience driving revenue growth and scaling operations for top social media and live-streaming platforms. Achieved a remarkable 200% revenue increase and successfully managed high-value agency ecosystems, which contributed 35% to the company’s total revenue. Skilled in virtual gifting models, creator acquisition, and cross-functional team leadership, with a proven ability to leverage data-driven insights to inform content strategy and enhance user retention
             </p>
           </div>
         </div>
