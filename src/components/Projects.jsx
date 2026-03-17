@@ -5,6 +5,24 @@ import { ArrowUpRight } from 'lucide-react';
 
 const projects = [
   {
+    title: "Market Expansion Strategy",
+    description: "Spearheaded the entry into tier-2 and tier-3 markets, increasing user base by 40%.",
+    tags: ["Strategy", "Growth Hacking", "Market Analysis"],
+    link: "#"
+  },
+  {
+    title: "Agency Partnership Program",
+    description: "Developed a framework for onboarding 50+ agencies, contributing to 80% of revenue.",
+    tags: ["Partnerships", "B2B", "Revenue Optimization"],
+    link: "#"
+  },
+  {
+    title: "Creator Monetization Framework",
+    description: "Designed and implemented virtual gifting models to boost creator earnings.",
+    tags: ["Product Operations", "Monetization", "Data Analytics"],
+    link: "#"
+  },
+  {
     title: "Online Battle Scheduler",
     description: "Online Battle scheduler for live streaming creators with automatically matches with the time and target",
     tags: ["Live Streaming", "Scheduling", "Automation"],
@@ -62,7 +80,7 @@ const Projects = () => {
       <div className="max-w-6xl mx-auto">
         <div ref={titleRef} className="opacity-0">
           <h2 className="text-4xl font-bold text-apple-dark text-center mb-16">
-            Projects
+            Key Projects
           </h2>
         </div>
 
