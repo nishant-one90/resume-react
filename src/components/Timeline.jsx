@@ -11,7 +11,7 @@ const experiences = [
     description: (
       <ul className="list-disc pl-5 space-y-2">
         <li><strong>Revenue Growth & Monetization:</strong> Spearheading revenue generation through the virtual gifting model, ensuring consistent month-over-month and quarterly revenue growth by optimizing creator supply.</li>
-        <li><strong>Key Account Management:</strong> Directly managing top talent resource agencies contributing 80% of total business revenue, fostering strong relationships to maximize profitability.</li>
+        <li><strong>Key Account Management:</strong> Directly managing top talent resource agencies contributing 35% of total business revenue, fostering strong relationships to maximize profitability.</li>
         <li><strong>Business Strategy & Market Adaptation:</strong> Continuously refining agency contracts, creator earning policies, and commission structures based on competitive analysis and market trends to drive engagement and platform retention.</li>
         <li><strong>Performance Metrics & Optimization:</strong> Ensuring optimal viewer-to-streamer ratios by implementing effective creator acquisition and retention strategies, enhancing overall user engagement.</li>
       </ul>
