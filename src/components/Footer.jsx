@@ -1,5 +1,5 @@
 import React from 'react';
-import { Mail, Linkedin, Github } from 'lucide-react';
+import { Mail, Linkedin, Github, Phone } from 'lucide-react';
 import { useAnimeInView } from '../hooks/useAnimeInView';
 
 const Footer = () => {
@@ -23,6 +23,13 @@ const Footer = () => {
         </p>
         
         <div className="flex items-center gap-6">
+          <a 
+            href="tel:+919910980067" 
+            className="text-apple-subtext hover:text-apple-dark transition-colors duration-300"
+            aria-label="Phone"
+          >
+            <Phone className="w-5 h-5" />
+          </a>
           <a 
             href="mailto:y2knishant@gmail.com" 
             className="text-apple-subtext hover:text-apple-dark transition-colors duration-300"
