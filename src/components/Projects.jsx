@@ -62,7 +62,7 @@ const Projects = () => {
       <div className="max-w-6xl mx-auto">
         <div ref={titleRef} className="opacity-0">
           <h2 className="text-4xl font-bold text-apple-dark text-center mb-16">
-            Key Projects
+            Projects
           </h2>
         </div>
 
